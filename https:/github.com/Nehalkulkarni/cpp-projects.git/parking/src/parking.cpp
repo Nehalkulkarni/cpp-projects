@@ -51,7 +51,7 @@ void parking::rickshaw()
 }
 void parking::car()
 {
-	if(this->count<=100)
+	if(count<=100)
 	{
 		count++;
 		amount=amount+200;
@@ -64,7 +64,7 @@ void parking::car()
 }
 void parking::bus()
 {
-	if(this->count<=100)
+	if(count<=100)
 	{
 		count++;
 		amount=amount+300;
@@ -91,20 +91,26 @@ void parking::remove()
 			switch(vehicle)
 			{
 			case 1:
+				if(rickshaws>=0)
+				{
 			    rickshaws--;
-				amount=amount-100;
 				count--;
 				break;
+				}
 			case 2:
+				if(cars>=0)
+				{
 		        cars--;
-				amount=amount-200;
 				count--;
 				break;
+				}
 			case 3:
+				if(buses>=0)
+				{
 				buses--;
-				amount=amount-300;
 				count--;
 				break;
+				}
 			}
 }
 
